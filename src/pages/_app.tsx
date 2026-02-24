@@ -1,6 +1,11 @@
 import type { AppProps } from 'next/app';
+import { WalletProvider } from '@/components/WalletProvider';
 import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <WalletProvider>
+      <Component {...pageProps} />
+    </WalletProvider>
+  );
 }
